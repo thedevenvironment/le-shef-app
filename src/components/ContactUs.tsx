@@ -1,5 +1,6 @@
 import styled from 'styled-components/native'
-import { Fontisto } from '@expo/vector-icons'
+import Fontisto from '@expo/vector-icons/Fontisto'
+import { Image, View } from 'react-native-animatable'
 import { useContentfulStore } from 'src/stores/contentful'
 import { appTheme } from 'src/assets/styles/theme'
 
@@ -14,14 +15,21 @@ export default function ContactUs() {
 
   return (
     <S.ContactUsWrapper>
-      <S.TextWrapper>
+      <S.TextWrapper animation="bounceIn" delay={1500}>
         <S.Title>{`< ${contactHeader} />`}</S.Title>
         <S.EmailWrapper>
           <Fontisto name="email" size={24} color={appTheme.highlight} />
           <S.Text>{`${contactEmail}`}</S.Text>
         </S.EmailWrapper>
       </S.TextWrapper>
-      <S.ContactImage source={{ uri: contactImage }} resizeMode="contain" />
+      <S.ContactImage
+        animation="fadeInRight"
+        delay={1500}
+        source={{ uri: contactImage }}
+        resizeMode="contain"
+        alt="our offices"
+        title="our offices"
+      />
     </S.ContactUsWrapper>
   )
 }
@@ -35,14 +43,14 @@ const S = {
     padding-left: ${p => p.theme.dimensions(20, 'px')};
     padding-right: ${p => p.theme.dimensions(20, 'px')};
   `,
-  ContactImage: styled.Image`
+  ContactImage: styled(Image)<{ title: string }>`
     width: 300px;
     height: 200px;
     margin: auto;
     margin-top: ${p => p.theme.dimensions(20, 'px')};
     margin-bottom: ${p => p.theme.dimensions(20, 'px')};
   `,
-  TextWrapper: styled.View`
+  TextWrapper: styled(View)`
     margin: auto;
     flex-direction: column;
     align-items: center;

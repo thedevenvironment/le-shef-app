@@ -12,6 +12,7 @@ npm-debug.*
 web-build/
 build-*.tar.gz
 coverage
+.firebase
 
 # macOS
 .DS_Store

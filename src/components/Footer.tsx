@@ -7,7 +7,7 @@ import { View } from 'react-native-animatable'
  */
 export default function Footer() {
   return (
-    <S.FooterWrapper animation="slideInUp" duration={1000}>
+    <S.FooterWrapper animation="bounceIn" delay={2000}>
       <S.Text>{`© ${new Date().getFullYear()} The Dev Environment, Inc.`}</S.Text>
     </S.FooterWrapper>
   )

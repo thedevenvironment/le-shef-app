@@ -12,9 +12,9 @@ export default function ParagraphWithTitle() {
 
   return (
     <S.Content>
-      <S.Title animation="slideInLeft" duration={1000}>{`< ${pageHeader} />`}</S.Title>
+      <S.Title animation="fadeInLeft" duration={1000} delay={1000}>{`< ${pageHeader} />`}</S.Title>
       {pageContentCollection.items.map((p, i) => (
-        <S.Paragraph key={`paragraph-${i}`} animation="slideInRight" duration={1000}>
+        <S.Paragraph key={`paragraph-${i}`} animation="fadeInRight" duration={1000} delay={1000}>
           {p.text}
         </S.Paragraph>
       ))}

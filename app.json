@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "The Dev Environment",
+    "name": "The Dev Environment | Web Development Experts",
     "slug": "thedevenvironment-com",
     "scheme": "app",
     "version": "1.0.0",
@@ -21,7 +21,7 @@
       }
     },
     "web": {
-      "favicon": "./src/assets/images/favicon.ico",
+      "favicon": "./src/assets/images/favicon.png",
       "bundler": "metro"
     },
     "plugins": ["expo-router"]

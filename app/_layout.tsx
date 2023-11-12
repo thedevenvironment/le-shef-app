@@ -13,7 +13,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider theme={appTheme}>
       <StatusBar style="light" />
-      <S.AppWrapper>
+      <S.AppWrapper testID='wowowowowowwowowowowowoowowowowowo'>
         <NavProvider value={navTheme}>
           <Stack screenOptions={{ headerShown: false }} />
         </NavProvider>
@@ -28,6 +28,6 @@ const S = {
     width: 100%;
     flex: 1;
     flex-direction: column;
-    background-color: ${appTheme.background};
+    background-color: purple; //${appTheme.background};
   `
 }

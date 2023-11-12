@@ -1,46 +1,52 @@
-import styled from 'styled-components/native'
-import { View } from 'react-native-animatable'
-import { useContentfulStore } from 'src/stores/contentful'
 import { useEffect, useState } from 'react'
-import { Platform, Dimensions } from 'react-native'
+import { View } from 'react-native-animatable'
+import styled from 'styled-components/native'
+import { useContentfulStore } from 'src/stores/contentful'
+import useDimensions from 'src/hooks/useDimensions'
 
 /**
  * Header
  * -
  */
 export default function Header() {
-  const [width, setWidth] = useState(Math.min(Dimensions.get('window').width, 1000) - 40)
+  const dimensions = useDimensions()
+  const [width, setWidth] = useState(Math.min(dimensions.width, 1000) - 40)
   const [height, setHeight] = useState(Math.round(width * 0.165625))
   const bannerImageurl = useContentfulStore(s => s.content.bannerImage.url)
   const logoImageUrl = useContentfulStore(s => s.content.logoImage.url)
 
   useEffect(() => {
-    if (Platform.OS === 'web') {
-      let timeout: any
-      window.addEventListener('resize', () => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-          const width = Math.min(Dimensions.get('window').width, 1000) - 40
-          setWidth(width)
-          setHeight(Math.round(width * 0.165625))
-        }, 100)
-      })
-    }
-  }, [])
+    const newWidth = Math.min(dimensions.width, 1000) - 40
+    setWidth(newWidth)
+    setHeight(Math.round(newWidth * 0.165625))
+  }, [dimensions])
 
   return (
     <S.Content>
       {/* Banner Image */}
-      <S.BannerImageWrapper animation="flipInX" duration={1000}>
-        <S.BannerImage source={{ uri: bannerImageurl }} resizeMode="contain" width={width} height={height} />
+      <S.BannerImageWrapper animation="flipInY" duration={1000} delay={0}>
+        <S.BannerImage
+          source={{ uri: bannerImageurl }}
+          resizeMode="contain"
+          width={width}
+          height={height}
+          alt="programmer's desktop"
+          title="programmer's desktop"
+        />
       </S.BannerImageWrapper>
 
       {/* Spacer */}
       <S.Spacer height={height} />
 
       {/* Logo Image */}
-      <S.LogoImageWrapper animation="flipInY" duration={1000}>
-        <S.LogoImage source={{ uri: logoImageUrl }} resizeMode="contain" height={height} />
+      <S.LogoImageWrapper animation="flipInX" duration={1000} delay={500}>
+        <S.LogoImage
+          source={{ uri: logoImageUrl }}
+          resizeMode="contain"
+          height={height}
+          alt="the dev environment logo"
+          title="the dev environment logo"
+        />
       </S.LogoImageWrapper>
     </S.Content>
   )
@@ -62,7 +68,7 @@ const S = {
     border-radius: ${p => p.theme.dimensions(10, 'px')};
     overflow: hidden;
   `,
-  BannerImage: styled.Image<{ width: number; height: number }>`
+  BannerImage: styled.Image<{ width: number; height: number; title: string }>`
     width: ${p => p.width}px;
     height: ${p => p.height}px;
   `,
@@ -77,7 +83,7 @@ const S = {
     border-color: #000;
     overflow: hidden;
   `,
-  LogoImage: styled.Image<{ height: number }>`
+  LogoImage: styled.Image<{ height: number; title: string }>`
     width: ${p => p.height * 1.5}px;
     height: ${p => p.height * 1.5}px;
   `
