@@ -19,7 +19,7 @@
     "web": "expo start --web --no-dev --host localhost --port 3000"
   },
   "overrides": {
-    "@expo/config-plugins": "~7.2.2"
+    "react-refresh": "~0.14.0"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
