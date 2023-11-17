@@ -1,71 +1,58 @@
-# thedevenvironment-com
+<img src="https://github.com/thedevenvironment/le-shef-app/blob/main/src/assets/images/logo.png" alt="drawing" width="200"/>
 
 @thedevenvironment
 
-[__1. Introduction__](#introduction)
+## Table of Contents:
 
-[__2. Folder Structure__](#folder-structure)
+[**1. Introduction**](#introduction)
 
-[__3. Getting Started__](#getting-started)
+[**3. Getting Started**](#getting-started)
 
-[__4. Further Reading__](#further-reading)
-
----
+[**4. Further Reading**](#further-reading)
 
 <a name="#introduction"></a>
+
 ## 1. Introduction
 
-This repo is a scaffolding of an `Expo` application that uses `Expo Router` and it's file based routing capibilities. It has all the necessary packages needed to just start the application and begin adding routes.  
+Le Shef is an application that allows you to cook multiple frozen meals at the same time in the oven. Whether it's Egg Rolls & Pizza or French Fries and Quiche, you can do it all with Le Shef.
 
-The reason it exists is to mitigate the amount of work needed to add typescript, jest, absolute imports and eslint into the traditional quickstart that the `create-expo-app` CLI command provides. 
+- Step 1. Input the cook time and temperature of each item into the app. Using the magic of technology, we will give you a single temperature to set your oven to.
 
-Two sample screens have been created, so everything will run out of the box. Also a number of useful scripts have been created in the package.json that allow the ability to run, build, test, lint and serve the application. 
+- Step 2. The app will tell you when to place each item in the oven. You can set the instructions to start cooking everything at one time, or to stagger each item so that everything is finished cooking at the same time!
 
-<a name="#folder-structure"></a>
-## 2. Folder Structure
-
-a. `App` Directory:
-- This folder is used at the file based router. Any file that lives here will be converted to a route for the application. [Learn More](https://expo.github.io/router/docs/)
-
-b. `Src` Directory:
-
-- This is where the application logic will live. 
-
-- The `assets` folder hosts images, fonts and base styles.
-
-- The `components` folder is where reusable react components will live. 
-
-- The `hooks` folder has a `useAppLoading` hook that handles the logic of loading assets and displaying the spinner. 
-
-- The `layouts` folder is where the view wrapper logic lives.
-
-- The `screens` Folder maps 1:1 with the routes in the `app` directory. The `/` path points to the `Home.tsx` screen, and then `/second` points to the `Second.tsx` screen. If you don't like this structure, you can move the component logic directly into the .tsx files in the app directly, however this provides a more robust solution.
+- Step 3. Eat your delicious, perfectly cooked food!
 
 <a name="#getting-started"></a>
-## 3. Getting Started
+
+## 2. Getting Started Locally
 
 a. Clone this repo to your local machine:
+
 ```
-git clone git@github.com:thedevenvironment/thedevenvironment-com.git
+git clone git@github.com:thedevenvironment/le-shef-app.git
 ```
 
 b. Install dependencies:
+
 ```
 npm ci
 ```
 
 c. Start the dev server:
+
 ```
 npm run dev
 ```
 
 d. When prompted, choose which platform to run on:
+
 - `a` - android
 - `i` - ios
 - `w` - web
 
 <a name="#further-reading"></a>
-## 4. Further Reading:
+
+## 3. Further Reading:
 
 - [Expo Router Docs](https://expo.github.io/router/docs/)
 

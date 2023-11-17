@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "The Dev Environment | Web Development Experts",
-    "slug": "thedevenvironment-com",
+    "name": "Le Shef | Cook Multiple Frozen Meals At Once!",
+    "slug": "le-shef-app",
     "scheme": "app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/app-icon.png",
     "splash": {
       "image": "./src/assets/images/splash.png",
-      "backgroundColor": "#013C50"
+      "backgroundColor": "#CAECFB"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -17,7 +17,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/images/app-icon.png",
-        "backgroundColor": "#013C50"
+        "backgroundColor": "#CAECFB"
       }
     },
     "web": {
