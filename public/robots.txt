@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leshef.com/sitemap.xml
+Sitemap: https://leshef.web.app/sitemap.xml

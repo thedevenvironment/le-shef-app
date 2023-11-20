@@ -1,17 +1,32 @@
 import styled from 'styled-components/native'
+import NewTimerButton from 'src/components/Buttons/NewTimer'
+import TimerCard from 'src/components/TimerCard'
+import { useTimers } from 'src/hooks/useTimers'
+import { useEffect } from 'react'
 
-/**
- * Index Screen
- * -
- */
 export default function IndexScreen() {
-  return <S.Logo source={require('src/assets/images/app-icon.png')} />
+  const timers = useTimers(s => s.timers)
+  const decrementTimers = useTimers(s => s.decrementTimers)
+
+  useEffect(() => {
+    const interval = setInterval(() => decrementTimers(), 1000)
+
+    return () => {
+      console.log('clear interval')
+      clearInterval(interval)
+    }
+  }, [])
+
+  return (
+    <S.Wrapper>
+      {timers.map((timer, i) => <TimerCard key={`timer-${i}`} {...timer} />)}
+      <NewTimerButton />
+    </S.Wrapper>
+  )
 }
 
 const S = {
-  Logo: styled.Image`
-    margin: auto;
-    height: 200px;
-    width: 200px;
+  Wrapper: styled.ScrollView`
+    padding-top: 10px;
   `
 }

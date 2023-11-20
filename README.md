@@ -1,4 +1,4 @@
-<img src="https://github.com/thedevenvironment/le-shef-app/blob/main/src/assets/images/logo.png" alt="drawing" width="200"/>
+<img src="./src/assets//images/logo.png" alt="drawing" width="200"/>
 
 @thedevenvironment
 
